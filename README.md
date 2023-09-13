@@ -1,4 +1,4 @@
-![Uploading Screenshot 2023-09-13 at 22.47.13.png…]()
+<img width="410" alt="Screenshot 2023-09-13 at 22 47 13" src="https://github.com/LudmilKirov/card_scanner/assets/45374371/610b0127-89e7-42f7-adf3-475b6cc28c77">
 
 
 ## Getting Started
