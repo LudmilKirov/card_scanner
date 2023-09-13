@@ -1,0 +1,40 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.nateshmbhat.credit_card_scanner" >
+4
+5    <uses-sdk
+6        android:minSdkVersion="21"
+6-->/Users/lkirov/.pub-cache/hosted/pub.dev/credit_card_scanner-1.0.5/android/src/main/AndroidManifest.xml
+7        android:targetSdkVersion="21" />
+7-->/Users/lkirov/.pub-cache/hosted/pub.dev/credit_card_scanner-1.0.5/android/src/main/AndroidManifest.xml
+8
+9    <uses-feature android:name="android.hardware.camera.any" />
+9-->/Users/lkirov/.pub-cache/hosted/pub.dev/credit_card_scanner-1.0.5/android/src/main/AndroidManifest.xml:5:5-64
+9-->/Users/lkirov/.pub-cache/hosted/pub.dev/credit_card_scanner-1.0.5/android/src/main/AndroidManifest.xml:5:19-61
+10
+11    <uses-permission android:name="android.permission.CAMERA" />
+11-->/Users/lkirov/.pub-cache/hosted/pub.dev/credit_card_scanner-1.0.5/android/src/main/AndroidManifest.xml:6:5-65
+11-->/Users/lkirov/.pub-cache/hosted/pub.dev/credit_card_scanner-1.0.5/android/src/main/AndroidManifest.xml:6:22-62
+12
+13    <application android:name="${applicationName}" >
+13-->/Users/lkirov/.pub-cache/hosted/pub.dev/credit_card_scanner-1.0.5/android/src/main/AndroidManifest.xml:8:5-19:19
+13-->/Users/lkirov/.pub-cache/hosted/pub.dev/credit_card_scanner-1.0.5/android/src/main/AndroidManifest.xml:9:9-42
+14        <meta-data
+14-->/Users/lkirov/.pub-cache/hosted/pub.dev/credit_card_scanner-1.0.5/android/src/main/AndroidManifest.xml:11:9-13:35
+15            android:name="com.google.mlkit.vision.DEPENDENCIES"
+15-->/Users/lkirov/.pub-cache/hosted/pub.dev/credit_card_scanner-1.0.5/android/src/main/AndroidManifest.xml:12:13-64
+16            android:value="ocr" />
+16-->/Users/lkirov/.pub-cache/hosted/pub.dev/credit_card_scanner-1.0.5/android/src/main/AndroidManifest.xml:13:13-32
+17
+18        <activity
+18-->/Users/lkirov/.pub-cache/hosted/pub.dev/credit_card_scanner-1.0.5/android/src/main/AndroidManifest.xml:14:9-18:20
+19            android:name="com.nateshmbhat.credit_card_scanner.CardScannerCameraActivity"
+19-->/Users/lkirov/.pub-cache/hosted/pub.dev/credit_card_scanner-1.0.5/android/src/main/AndroidManifest.xml:15:13-54
+20            android:screenOrientation="portrait"
+20-->/Users/lkirov/.pub-cache/hosted/pub.dev/credit_card_scanner-1.0.5/android/src/main/AndroidManifest.xml:16:13-49
+21            android:theme="@style/Theme.AppCompat" >
+21-->/Users/lkirov/.pub-cache/hosted/pub.dev/credit_card_scanner-1.0.5/android/src/main/AndroidManifest.xml:17:13-51
+22        </activity>
+23    </application>
+24
+25</manifest>
