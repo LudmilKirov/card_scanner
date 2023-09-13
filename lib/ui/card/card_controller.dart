@@ -4,16 +4,6 @@ import 'package:get/get.dart';
 
 class CardController extends GetxController {
   final RxBool isAllValid = RxBool(false);
-
-  final TextFieldValidatorController nameTextValidatorController =
-      TextFieldValidatorController();
-  final TextFieldValidatorController cardNumberTextValidatorController =
-      TextFieldValidatorController();
-  final TextFieldValidatorController expiryDateTextValidatorController =
-      TextFieldValidatorController();
-  final TextFieldValidatorController cvvTextValidatorController =
-      TextFieldValidatorController();
-
   final Rxn<CardDetails> _cardDetails = Rxn();
   final CardScanOptions _scanOptions = const CardScanOptions(
     scanCardHolderName: true,
@@ -23,6 +13,18 @@ class CardController extends GetxController {
       CardHolderNameScanPosition.aboveCardNumber,
     ],
   );
+
+  final Rxn<dynamic> onError = Rxn();
+  final Rxn<dynamic> onSuccess = Rxn();
+
+  final TextFieldValidatorController nameTextValidatorController =
+      TextFieldValidatorController();
+  final TextFieldValidatorController cardNumberTextValidatorController =
+      TextFieldValidatorController();
+  final TextFieldValidatorController expiryDateTextValidatorController =
+      TextFieldValidatorController();
+  final TextFieldValidatorController cvvTextValidatorController =
+      TextFieldValidatorController();
 
   void scanCard() {
     CardScanner.scanCard(scanOptions: _scanOptions).then((cardDetails) {
@@ -39,7 +41,11 @@ class CardController extends GetxController {
       // TODO-lkirov (13 Sep 2023): In this package there is no scan for CVV, investigate further
 
       _cardDetails(cardDetails);
-    });
+    }, onError: onError.trigger);
+  }
+
+  void submit() {
+    onSuccess.trigger(true);
   }
 
   void validateAll(_) {

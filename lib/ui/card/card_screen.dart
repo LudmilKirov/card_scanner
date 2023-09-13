@@ -2,17 +2,31 @@ import 'package:card_scanner/res/colors.dart';
 import 'package:card_scanner/res/dimensions.dart';
 import 'package:card_scanner/ui/card/card_controller.dart';
 import 'package:card_scanner/utils/extension/rx_extensions.dart';
+import 'package:card_scanner/utils/extension/rxn_extension.dart';
 import 'package:card_scanner/utils/rx/text_field_validator_controller.dart';
 import 'package:card_scanner/utils/ui/text_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CardScreen extends GetWidget<CardController> {
+  const CardScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
+    controller.onSuccess.listenOnceWhenNotNull(_onSuccess);
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SafeArea(child: _buildBody()),
+    );
+  }
+
+  void _onSuccess(_) {
+    Get.snackbar(
+      "Success",
+      "",
+      colorText: Colors.white,
+      backgroundColor: Colors.green,
     );
   }
 
@@ -160,12 +174,14 @@ class CardScreen extends GetWidget<CardController> {
   Widget _buildSubmitButton() {
     return controller.isAllValid.build(
       (isAllValid) => InkWell(
-        onTap: isAllValid ? () {} : null,
+        onTap: isAllValid ? controller.submit : null,
         child: Container(
           width: double.maxFinite,
           height: 48,
           color: primaryColor.withOpacity(isAllValid ? 1 : 0.25),
-          child: const Center(child: Text("Submit")),
+          child: const Center(
+            child: Text("Submit"),
+          ),
         ),
       ),
     );
